@@ -6,13 +6,9 @@ function insertDashe(inputNumber) {
     const string = inputNumber.toString();
     let newString = '';
 
-    function isEven(number) {
-       return parseInt(number) % 2 === 0;
-    }
-
     for (let i = 0; i< string.length; i++) {
         newString += string[i];
-        if(i<string.length - 1 && isEven(string[i]) && isEven(string[i + 1])) {
+        if(i<string.length - 1 && (string[i] % 2 === 0) && (string[i + 1] % 2 === 0)) {
             newString += '-';
         }
     }
@@ -21,6 +17,6 @@ function insertDashe(inputNumber) {
 
 const inputNumber = '025468';
 
-const output = insertDashe(inputNumber);
 
-console.log(output);
+
+console.log(insertDashe(inputNumber));
